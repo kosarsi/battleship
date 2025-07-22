@@ -14,3 +14,13 @@ test ('hit function caps out at length', () => {
     ship.hit();
     expect(ship.hits).toBe(2);
 });
+
+test ('isSunk function works', () => {
+    let ship = new Ship(4);
+    ship.hit();
+    ship.hit();
+    expect(ship.isSunk()).toBe(false);
+    ship.hit();
+    ship.hit();
+    expect(ship.isSunk()).toBe(true);
+});
